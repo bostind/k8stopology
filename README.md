@@ -622,6 +622,10 @@ pause-deployment-7c9c857b6b-ptwfn   1/1     Running   0          79s   172.16.21
 
 1、实际物理基础架构与标签的快速转换实现？
 
+参考：https://github.com/bostind/labels2tomermaind
+
 2、可否根据标签实现绘制基础架构？
+
+参考：https://github.com/bostind/labels2tomermaind
 
 3、副本数量、maxSkew值快速计算关系？
