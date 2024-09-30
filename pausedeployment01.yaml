@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pause-deployment
+spec:
+  selector:
+    matchLabels:
+      app: pause
+  replicas: 7 
+  template:
+    metadata:
+      labels:
+        app: pause
+    spec:
+      containers:
+      - name: pause
+        image: k8s.gcr.io/pause:3.1
+      affinity:
+        nodeAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            preference:
+              matchExpressions:
+              - key:  zone
+                operator: In
+                values:
+                - cn-wh-02
